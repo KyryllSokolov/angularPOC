@@ -11,7 +11,7 @@ const routes: Routes = [
       { path: 'basic-info', component: BasicInformationComponent },
       { path: 'services', component: MyServicesComponent },
       { path: 'password', component: PasswordComponent },
-      { path: '', redirectTo: 'basic-info', pathMatch: 'full' }
+      { path: '', redirectTo: 'basic-info', pathMatch: 'full' },
     ]
   },
   { path: '', redirectTo: 'profile', pathMatch: 'full' }

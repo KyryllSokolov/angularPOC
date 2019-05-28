@@ -6,15 +6,20 @@ import { MyServicesComponent } from './my-services/my-services.component';
 import { ProfilePageComponent } from './profile-page/profile-page.component';
 import { ProfileRoutingModule } from './profile-routing.module';
 import { DemoMaterialModule } from '../material.module';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [BasicInformationComponent, PasswordComponent, MyServicesComponent, ProfilePageComponent],
+  declarations: [
+    BasicInformationComponent,
+    PasswordComponent,
+    MyServicesComponent,
+    ProfilePageComponent],
   imports: [
     CommonModule,
     ProfileRoutingModule,
     DemoMaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class ProfileModule { }

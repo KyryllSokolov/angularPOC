@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { PasswordValidation } from '../../shared/validators/match-password.validator';
 
 @Component({
   selector: 'app-password',
@@ -15,9 +16,13 @@ export class PasswordComponent implements OnInit {
   ngOnInit() {
     this.passwordForm = this.fb.group({
       oldPass: ['', Validators.required],
-      newPass: ['', Validators.required],
-      confirmPass: ['', Validators.required]
+      passwordConfirmation: this.fb.group({
+        newPass: ['', Validators.required],
+        confirmPass: ['', Validators.required]
+      }, { validators: [PasswordValidation.MatchPassword]})
     });
+
+    this.passwordForm.valueChanges.subscribe((someStuff) => console.log(this.passwordForm.get('passwordConfirmation')));
   }
 
   onSubmit() {
